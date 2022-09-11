@@ -71,6 +71,12 @@ group :test do
   gem "webdrivers"
 end
 
+group :actions do
+  # Environment dependencies for Github Actions
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
+end
+
 group :production, :actions do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
