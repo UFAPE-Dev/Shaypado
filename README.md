@@ -1,11 +1,5 @@
 # Shaypado
 
-![GitHub repo size](https://img.shields.io/github/repo-size/shaypado/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/shaypado/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/shaypado/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/shaypado/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/shaypado/README-template?style=for-the-badge)
-
 ## 📌 Sobre o Projeto:
 
 Projeto para implementação de um Sistema de Academia em Ruby e Rails com foco no servidor para a disciplina de __Engenharia de Software__ ministrado pelo Professor Dr. [Rodrigo Andrade](https://github.com/rcaa), da UFAPE, referente ao período de 2020.2 com intuito de avaliação para a 2ª Verificação de Aprendizagem.
