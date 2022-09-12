@@ -1,6 +1,7 @@
 # Shaypado
 
 ## 📌 Sobre o Projeto:
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/76f58f4be76d4fb2b4a73f621fc1864c)](https://www.codacy.com/gh/UFAPE-Dev/shaypado/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UFAPE-Dev/shaypado&amp;utm_campaign=Badge_Grade)
 
 Projeto para implementação de um Sistema de Academia em Ruby e Rails com foco no servidor para a disciplina de __Engenharia de Software__ ministrado pelo Professor Dr. [Rodrigo Andrade](https://github.com/rcaa), da UFAPE, referente ao período de 2020.2 com intuito de avaliação para a 2ª Verificação de Aprendizagem.
 
