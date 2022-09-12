@@ -20,13 +20,24 @@ Antes de começar, veja se você atende aos seguintes requisitos
 <sudo apt-get install libpq-dev>
 ```
 
+<div align="center">
+  <img align="center" alt="HTML" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg">
+    <img align="center" alt="CSS" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg">
+    <img align="center" alt="Bootstrap" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg">
+  <img align="center" alt="Ruby" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/ruby/ruby-plain.svg">
+    <img align="center" alt="Rails" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/rails/rails-plain.svg">
+    <img align="center" alt="RubyMine" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/rubymine/rubymine-plain.svg">
+
+  
+  </div>
+
 ### 🗒️ Ajustes e Melhorias:
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
--[ ] Tarefa 1
--[ ] Tarefa 2
--[ ] Tarefa 3
+- [ ] Tarefa 1
+- [ ] Tarefa 2
+- [ ] Tarefa 3
 
 ### Integrantes: 
 
