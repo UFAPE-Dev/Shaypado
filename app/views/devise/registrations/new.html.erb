@@ -38,6 +38,11 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div>
+    <%= f.label :horario_trabalho, style: "display: block" %>
+    <%= f.time_field :horario_trabalho %>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
