@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_action :configure_sign_up_params, only: [:create]
   def new
     super
   end
@@ -9,5 +10,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     super
+  end
+
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nome, :email, :endereco, :cep, :cpf, :data_nascimento, :contato])
   end
 end

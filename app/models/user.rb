@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   enum role: [:proprietario, :instrutor, :aluno]
   after_initialize :set_default_role, :if => :new_record?
+  validates :nome, presence: true
   def set_default_role
     self.role ||= :proprietario
   end

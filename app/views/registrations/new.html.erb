@@ -3,6 +3,36 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div>
+    <%= f.label :nome, style: "display: block" %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div>
+    <%= f.label :endereco, style: "display: block" %>
+    <%= f.text_field :endereco %>
+  </div>
+
+  <div>
+    <%= f.label :cep, style: "display: block" %>
+    <%= f.text_field :cep %>
+  </div>
+
+  <div>
+    <%= f.label :cpf, style: "display: block" %>
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div>
+    <%= f.label :data_nascimento, style: "display: block" %>
+    <%= f.date_field :data_nascimento %>
+  </div>
+
+  <div>
+    <%= f.label :contato, style: "display: block" %>
+    <%= f.text_field :contato %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
