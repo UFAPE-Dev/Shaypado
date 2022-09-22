@@ -81,3 +81,5 @@ group :production, :actions do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
 end
+
+gem "devise", "~> 4.8"

@@ -1,1 +1,7 @@
 <h1>Bem vindo ao Rails no Heroku</h1>
+
+<% if current_user %>
+  <p>Hello <% current_user.name %>!</p>
+  <% else %>
+  nada
+<% end %>
