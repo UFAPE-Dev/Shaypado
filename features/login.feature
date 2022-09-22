@@ -48,3 +48,9 @@ Feature: login
     When eu preencho o campo email com '' e senha ''
     And eu clico no botao Log in
     Then eu vejo a mensagem 'Invalid Email or password.'
+
+  Scenario: login sem usuarios no banco
+    Given eu estou na pagina de login
+    When eu preencho o campo email com 'email@email.com' e senha '123456senhaerrada'
+    And eu clico no botao Log in
+    Then eu vejo a mensagem 'Invalid Email or password.'
