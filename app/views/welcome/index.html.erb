@@ -1,7 +1,10 @@
 <h1>Bem vindo ao Rails no Heroku</h1>
 
 <% if current_user %>
-  <p>Hello <% current_user.name %>!</p>
+  <p>Hello <% current_user.nome %>!</p>
+  <p> <%= link_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete %> </p>
+  <p> You are a <%= current_user.role %> </p>
   <% else %>
-  nada
+  <p> <%= link_to "Login", new_user_session_path %> </p>
+  <p> <%= link_to "Sign up", new_user_registration_path %> </p>
 <% end %>
