@@ -69,6 +69,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  gem "cucumber-rails", require: false
+  gem "database_cleaner"
+  gem "rspec-rails"
 end
 
 group :actions do
@@ -81,3 +85,5 @@ group :production, :actions do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
 end
+
+gem "devise", "~> 4.8"
