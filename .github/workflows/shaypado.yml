@@ -1,5 +1,9 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   test:
@@ -29,6 +33,7 @@ jobs:
       - name: Install PostgreSQL client
         run: |
           sudo apt-get -yqq install libpq-dev
+          gem install bundler
       - name: Cache Ruby Gems
         uses: actions/cache@v2
         with:
@@ -53,3 +58,32 @@ jobs:
           DISABLE_SPRING: 1
         run: |
           bundle exec rails db:prepare
+          bundle exec rake test
+      - name: Build and test with RSpec
+          env:
+            PG_DATABASE: postgres
+            PG_HOST: localhost
+            PG_USER: postgres
+            PG_PASSWORD: password
+            RAILS_ENV: test
+          run: |
+            bundle exec rspec spec
+
+      group :development, :test do
+        # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+        gem 'byebug', platforms: %i[mri mingw x64_mingw]
+        gem 'rspec-rails'
+      end
+
+      - name: Create Coverage Artifact
+          uses: actions/upload-artifact@v2
+          with:
+            name: code-coverage
+            path: coverage/
+      group :test do
+        # Adds support for Capybara system testing and selenium driver
+        gem 'capybara', '>= 3.26'
+        gem 'selenium-webdriver'
+        gem 'webdrivers'
+        gem 'simplecov', require: false
+      end
