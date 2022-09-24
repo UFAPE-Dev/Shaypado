@@ -1,0 +1,2 @@
+class Academia < ApplicationRecord
+end
