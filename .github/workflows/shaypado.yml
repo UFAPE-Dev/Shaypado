@@ -59,15 +59,6 @@ jobs:
         run: |
           bundle exec rails db:prepare
           bundle exec rake test
-      - name: Build and test with RSpec
-          env:
-            PG_DATABASE: postgres
-            PG_HOST: localhost
-            PG_USER: postgres
-            PG_PASSWORD: password
-            RAILS_ENV: test
-          run: |
-            bundle exec rspec spec
 
       group :development, :test do
         # Call 'byebug' anywhere in the code to stop execution and get a debugger console
