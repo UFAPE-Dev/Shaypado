@@ -30,28 +30,22 @@ jobs:
         with:
           ruby-version: 3.1.1
 
-<<<<<<< HEAD
-=======
       - uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: install
 
->>>>>>> c287a6a794bdbc8907ed1ecfa2ceb54cb75fa8ff
       - name: Install PostgreSQL client
         run: |
           sudo apt-get -yqq install libpq-dev
           gem install bundler
 
       - name: Install Gems
-<<<<<<< HEAD
           run: |
             bundle install
 
-=======
         run: |
           bundle install
-            
->>>>>>> c287a6a794bdbc8907ed1ecfa2ceb54cb75fa8ff
+
       - name: Cache Ruby Gems
         uses: actions/cache@v2
         with:
