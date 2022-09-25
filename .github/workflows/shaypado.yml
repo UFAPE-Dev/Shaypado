@@ -30,15 +30,28 @@ jobs:
         with:
           ruby-version: 3.1.1
 
+<<<<<<< HEAD
+=======
+      - uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
+>>>>>>> c287a6a794bdbc8907ed1ecfa2ceb54cb75fa8ff
       - name: Install PostgreSQL client
         run: |
           sudo apt-get -yqq install libpq-dev
           gem install bundler
 
       - name: Install Gems
+<<<<<<< HEAD
           run: |
             bundle install
 
+=======
+        run: |
+          bundle install
+            
+>>>>>>> c287a6a794bdbc8907ed1ecfa2ceb54cb75fa8ff
       - name: Cache Ruby Gems
         uses: actions/cache@v2
         with:
@@ -64,3 +77,24 @@ jobs:
         run: |
           bundle exec rails db:prepare
           bundle exec rake test
+          
+      - name: Build and test with rspec
+        env:
+          PG_DATABASE: postgres
+          PG_HOST: localhost
+          PG_USER: postgres
+          PG_PASSWORD: password
+          RAILS_ENV: test
+        run: |
+          bundle exec rspec spec
+
+      - name: Create Coverage Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: coverage/
+
+
+          
+          
+          
