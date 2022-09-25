@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_24_022356) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_25_151342) do
   create_table "academia", force: :cascade do |t|
     t.string "id_proprietario"
     t.string "integer"
@@ -51,4 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_24_022356) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["userable_type", "userable_id"], name: "index_users_on_userable"
   end
+
 end
