@@ -40,9 +40,6 @@ jobs:
           gem install bundler
 
       - name: Install Gems
-          run: |
-            bundle install
-
         run: |
           bundle install
 
