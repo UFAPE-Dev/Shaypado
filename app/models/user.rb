@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :endereco, presence: true, length: { maximum: 100, minimum: 5 }
   validates :contato, presence: true, length: { is: 11 }, format: { with: /\A[0-9]+\z/, message: "Somente números" }
   validates :horario_trabalho, presence: true
+  belongs_to :userable, polymorphic: true
 
   def set_default_role
     self.role ||= :proprietario
