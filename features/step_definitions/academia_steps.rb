@@ -23,7 +23,7 @@ Given('eu estou na pagina de cadastro de academia') do
 end
 
 When('eu preencho os dados para o proprietario com cpf {string} os campos nome {string}, email {string}, endereco {string}, cnpj {string} e contato {string}') do |cpf, nome, email, endereco, cnpj, contato|
-  id = User.where(cpf: cpf).first.id
+  id = User.where(cpf: cpf).first.userable.id
 
   fill_in 'academia[id_proprietario]', :with => id
   fill_in 'academia[nome]', :with => nome
@@ -45,7 +45,7 @@ Given('esse proprietario de cpf {string} tem academia que possui nome {string}, 
   visit '/academia/new'
   expect(page).to have_content 'Criar Academia'
 
-  id = User.where(cpf: cpf).first.id
+  id = User.where(cpf: cpf).first.userable.id
 
   fill_in 'academia[id_proprietario]', :with => id
   fill_in 'academia[nome]', :with => nome
@@ -80,7 +80,7 @@ Then('eu sou redirecionado para a pagina do perfil da academia com cnpj {string}
 end
 
 Given('estou na pagina de edicao dessa academia com cnpj {string}') do |cnpj|
-  id = Academia.where(cnpj: cnpj).first.id
+  id = Academium.where(cnpj: cnpj).first.id
   visit "/academia/edit/#{id}"
 
   expect(page).to have_content 'Editar Academia'
@@ -103,7 +103,7 @@ Then('eu vejo uma mensagem de sucesso dizendo que a academia foi editada') do
 end
 
 Given('estou na pagina de visualizacao dessa academia com cnpj {string}') do |cnpj|
-  id = Academia.where(cnpj: cnpj).first.id
+  id = Academium.where(cnpj: cnpj).first.id
   visit "/academia#{id}"
 
   expect(page).to have_content cnpj
