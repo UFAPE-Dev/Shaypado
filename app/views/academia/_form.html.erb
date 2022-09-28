@@ -12,16 +12,6 @@
   <% end %>
 
   <div>
-    <%= form.label :id_proprietario, style: "display: block" %>
-    <%= form.text_field :id_proprietario %>
-  </div>
-
-  <div>
-    <%= form.label :integer, style: "display: block" %>
-    <%= form.text_field :integer %>
-  </div>
-
-  <div>
     <%= form.label :nome, style: "display: block" %>
     <%= form.text_field :nome %>
   </div>
@@ -37,8 +27,8 @@
   </div>
 
   <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+    <%= form.label :cnpj, style: "display: block" %>
+    <%= form.text_field :cnpj %>
   </div>
 
   <div>
@@ -50,6 +40,8 @@
     <%= form.label :ativo, style: "display: block" %>
     <%= form.check_box :ativo %>
   </div>
+
+  <%= form.select :proprietario_id, options_for_select(Proprietario.all.ids) %>
 
   <div>
     <%= form.submit %>

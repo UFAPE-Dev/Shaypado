@@ -17,10 +17,10 @@ class AcademiaControllerTest < ActionDispatch::IntegrationTest
 
   test "should create academium" do
     assert_difference("Academium.count") do
-      post academia_url, params: { academium: { ativo: @academium.ativo, contato: @academium.contato, cpf: @academium.cpf, email: @academium.email, endereco: @academium.endereco, id_proprietario: @academium.id_proprietario, integer: @academium.integer, nome: @academium.nome } }
+      post academia_url, params: { academium: { ativo: @academium.ativo, cnpj: @academium.cnpj, contato: @academium.contato, email: @academium.email, endereco: @academium.endereco, nome: @academium.nome, proprietario_id: @academium.proprietario_id } }
     end
 
-    assert_redirected_to academium_url(Academia.last)
+    assert_redirected_to academium_url(Academium.last)
   end
 
   test "should show academium" do
@@ -34,7 +34,7 @@ class AcademiaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update academium" do
-    patch academium_url(@academium), params: { academium: { ativo: @academium.ativo, contato: @academium.contato, cpf: @academium.cpf, email: @academium.email, endereco: @academium.endereco, id_proprietario: @academium.id_proprietario, integer: @academium.integer, nome: @academium.nome } }
+    patch academium_url(@academium), params: { academium: { ativo: @academium.ativo, cnpj: @academium.cnpj, contato: @academium.contato, email: @academium.email, endereco: @academium.endereco, nome: @academium.nome, proprietario_id: @academium.proprietario_id } }
     assert_redirected_to academium_url(@academium)
   end
 

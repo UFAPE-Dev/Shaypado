@@ -1,21 +1,2 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id_proprietario: MyString
-  integer: MyString
-  nome: MyString
-  email: MyString
-  endereco: MyString
-  cpf: MyString
-  contato: MyString
-  ativo: false
-
-two:
-  id_proprietario: MyString
-  integer: MyString
-  nome: MyString
-  email: MyString
-  endereco: MyString
-  cpf: MyString
-  contato: MyString
-  ativo: false

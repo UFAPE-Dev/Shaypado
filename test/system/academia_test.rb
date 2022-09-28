@@ -15,13 +15,12 @@ class AcademiaTest < ApplicationSystemTestCase
     click_on "New academium"
 
     check "Ativo" if @academium.ativo
+    fill_in "Cnpj", with: @academium.cnpj
     fill_in "Contato", with: @academium.contato
-    fill_in "Cpf", with: @academium.cpf
     fill_in "Email", with: @academium.email
     fill_in "Endereco", with: @academium.endereco
-    fill_in "Id proprietario", with: @academium.id_proprietario
-    fill_in "Integer", with: @academium.integer
     fill_in "Nome", with: @academium.nome
+    fill_in "Proprietario", with: @academium.proprietario_id
     click_on "Create Academium"
 
     assert_text "Academium was successfully created"
@@ -33,13 +32,12 @@ class AcademiaTest < ApplicationSystemTestCase
     click_on "Edit this academium", match: :first
 
     check "Ativo" if @academium.ativo
+    fill_in "Cnpj", with: @academium.cnpj
     fill_in "Contato", with: @academium.contato
-    fill_in "Cpf", with: @academium.cpf
     fill_in "Email", with: @academium.email
     fill_in "Endereco", with: @academium.endereco
-    fill_in "Id proprietario", with: @academium.id_proprietario
-    fill_in "Integer", with: @academium.integer
     fill_in "Nome", with: @academium.nome
+    fill_in "Proprietario", with: @academium.proprietario_id
     click_on "Update Academium"
 
     assert_text "Academium was successfully updated"
