@@ -1,9 +1,9 @@
 class AcademiaController < ApplicationController
-  before_action :set_academia, only: %i[ show edit update destroy ]
+  before_action :set_academium, only: %i[ show edit update destroy ]
 
   # GET /academia or /academia.json
   def index
-    @academia = Academia.all
+    @academia = Academium.all
   end
 
   # GET /academia/1 or /academia/1.json
@@ -12,7 +12,7 @@ class AcademiaController < ApplicationController
 
   # GET /academia/new
   def new
-    @academia = Academia.new
+    @academium = Academium.new
   end
 
   # GET /academia/1/edit
@@ -21,15 +21,15 @@ class AcademiaController < ApplicationController
 
   # POST /academia or /academia.json
   def create
-    @academia = Academia.new(academia_params)
+    @academium = Academium.new(academium_params)
 
     respond_to do |format|
-      if @academia.save
-        format.html { redirect_to academia_url(@academia), notice: "Academium was successfully created." }
-        format.json { render :show, status: :created, location: @academia }
+      if @academium.save
+        format.html { redirect_to academium_url(@academium), notice: "Academium was successfully created." }
+        format.json { render :show, status: :created, location: @academium }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @academia.errors, status: :unprocessable_entity }
+        format.json { render json: @academium.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +37,19 @@ class AcademiaController < ApplicationController
   # PATCH/PUT /academia/1 or /academia/1.json
   def update
     respond_to do |format|
-      if @academia.update(academia_params)
-        format.html { redirect_to academia_url(@academia), notice: "Academium was successfully updated." }
-        format.json { render :show, status: :ok, location: @academia }
+      if @academium.update(academium_params)
+        format.html { redirect_to academium_url(@academium), notice: "Academium was successfully updated." }
+        format.json { render :show, status: :ok, location: @academium }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @academia.errors, status: :unprocessable_entity }
+        format.json { render json: @academium.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /academia/1 or /academia/1.json
   def destroy
-    @academia.destroy
+    @academium.destroy
 
     respond_to do |format|
       format.html { redirect_to academia_url, notice: "Academium was successfully destroyed." }
@@ -59,12 +59,12 @@ class AcademiaController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_academia
-      @academia = Academia.find(params[:id])
+    def set_academium
+      @academium = Academium.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def academia_params
-      params.require(:academia).permit(:id_proprietario, :integer, :nome, :email, :endereco, :cpf, :contato, :ativo)
+    def academium_params
+      params.require(:academium).permit(:nome, :email, :endereco, :cnpj, :contato, :ativo, :proprietario_id)
     end
 end
