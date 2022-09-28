@@ -1,0 +1,52 @@
+<%= form_with(model: academium) do |form| %>
+  <% if academium.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(academium.errors.count, "error") %> prohibited this academium from being saved:</h2>
+
+      <ul>
+        <% academium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :endereco, style: "display: block" %>
+    <%= form.text_field :endereco %>
+  </div>
+
+  <div>
+    <%= form.label :cnpj, style: "display: block" %>
+    <%= form.text_field :cnpj %>
+  </div>
+
+  <div>
+    <%= form.label :contato, style: "display: block" %>
+    <%= form.text_field :contato %>
+  </div>
+
+  <div>
+    <%= form.label :ativo, style: "display: block" %>
+    <%= form.check_box :ativo %>
+  </div>
+
+  <div>
+    <%= form.label :proprietario_id, style: "display: block" %>
+    <%= form.text_field :proprietario_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
