@@ -15,7 +15,7 @@ class AcademiaTest < ActiveSupport::TestCase
   # teste salvar academia com dados corretos
 
   test "salvar academia sem proprietário" do
-    academia = Academium.new(nome: 'Academiaaa', email: 'academia@gmail.com', endereco: 'Rua 1 2 3 Bairro Liberdade', cnpj: '11111111111111', contato: '87981025842', ativo: true, proprietario_id: 1)
+    academia = Academium.new(nome: 'Academiaaa', email: 'academia@gmail.com', endereco: 'Rua 1 2 3 Bairro Liberdade', cnpj: '11111111111111', contato: '87981025842', ativo: true, proprietario_id: '')
     assert_not academia.save, "Não é possível salvar uma academia sem vincular ela a um proprietário"
   end
 
