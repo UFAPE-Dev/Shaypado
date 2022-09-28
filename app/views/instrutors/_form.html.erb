@@ -1,0 +1,67 @@
+<%= form_with(model: instrutor) do |form| %>
+  <% if instrutor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(instrutor.errors.count, "error") %> prohibited this instrutor from being saved:</h2>
+
+      <ul>
+        <% instrutor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :endereco, style: "display: block" %>
+    <%= form.text_field :endereco %>
+  </div>
+
+  <div>
+    <%= form.label :cep, style: "display: block" %>
+    <%= form.text_field :cep %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, style: "display: block" %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div>
+    <%= form.label :data_nascimento, style: "display: block" %>
+    <%= form.date_field :data_nascimento %>
+  </div>
+
+  <div>
+    <%= form.label :contato, style: "display: block" %>
+    <%= form.text_field :contato %>
+  </div>
+
+  <div>
+    <%= form.label :academium_id, style: "display: block" %>
+    <%= form.text_field :academium_id %>
+  </div>
+
+  <div>
+    <%= form.label :horario_trabalho, style: "display: block" %>
+    <%= form.time_field :horario_trabalho %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
