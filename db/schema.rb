@@ -10,8 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_25_151342) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_28_003326) do
   create_table "academia", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.string "endereco"
+    t.string "cnpj"
+    t.string "contato"
+    t.boolean "ativo"
+    t.integer "proprietario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proprietario_id"], name: "index_academia_on_proprietario_id"
+  end
+
+  create_table "academium", force: :cascade do |t|
     t.string "id_proprietario"
     t.string "integer"
     t.string "nome"
@@ -52,4 +65,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_151342) do
     t.index ["userable_type", "userable_id"], name: "index_users_on_userable"
   end
 
+  add_foreign_key "academia", "proprietarios"
 end
