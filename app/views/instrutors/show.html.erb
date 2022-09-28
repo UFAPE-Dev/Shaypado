@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @instrutor %>
+
+<div>
+  <%= link_to "Edit this instrutor", edit_instrutor_path(@instrutor) %> |
+  <%= link_to "Back to instrutors", instrutors_path %>
+
+  <%= button_to "Destroy this instrutor", @instrutor, method: :delete %>
+</div>
