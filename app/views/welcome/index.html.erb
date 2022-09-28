@@ -7,6 +7,9 @@
   <p> You are a <%= current_user.email %> </p>
   <a href="/academia/new">criar nova academia</a>
   <a href="/academia">suas academias</a>
+  <br>
+  <a href="/instrutors/new">criar novo instrutor</a>
+  <a href="/instrutors">seus instrutores</a>
   <% else %>
   <p> <%= link_to "Login", new_user_session_path %> </p>
   <p> <%= link_to "Sign up", new_user_registration_path %> </p>
