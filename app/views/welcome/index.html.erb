@@ -1,16 +1,15 @@
 <h1>Bem vindo ao Rails no Heroku</h1>
 
-<% if current_user %>
-  <p>Hello <% current_user.nome %>!</p>
-  <p> <%= link_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete %> </p>
-  <p> You are a <%= current_user.role %> </p>
-  <p> You are a <%= current_user.email %> </p>
+<% if current_proprietario %>
+  <p>Hello <% current_proprietario.nome %>!</p>
+  <p> <%= link_to "Logout", destroy_proprietario_session_path, 'data-turbo-method': :delete %> </p>
+  <p> You are a <%= current_proprietario.email %> </p>
   <a href="/academia/new">criar nova academia</a>
   <a href="/academia">suas academias</a>
   <br>
   <a href="/instrutors/new">criar novo instrutor</a>
   <a href="/instrutors">seus instrutores</a>
   <% else %>
-  <p> <%= link_to "Login", new_user_session_path %> </p>
-  <p> <%= link_to "Sign up", new_user_registration_path %> </p>
+  <p> <%= link_to "Login", new_proprietario_session_path %> </p>
+  <p> <%= link_to "Sign up", new_proprietario_registration_path %> </p>
 <% end %>
