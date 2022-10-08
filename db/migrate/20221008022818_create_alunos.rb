@@ -8,6 +8,7 @@ class CreateAlunos < ActiveRecord::Migration[7.0]
       t.date :data_nascimento
       t.string :contato
       t.string :senha
+      t.references :academium, null: false, foreign_key: true
 
       t.timestamps
     end

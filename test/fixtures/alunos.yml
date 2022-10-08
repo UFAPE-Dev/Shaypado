@@ -8,6 +8,7 @@ one:
   data_nascimento: 2022-10-07
   contato: MyString
   senha: MyString
+  academium: one
 
 two:
   nome: MyString
@@ -17,3 +18,4 @@ two:
   data_nascimento: 2022-10-07
   contato: MyString
   senha: MyString
+  academium: two

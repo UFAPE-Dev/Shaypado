@@ -65,6 +65,6 @@ class AlunosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aluno_params
-      params.require(:aluno).permit(:nome, :endereco, :cep, :cpf, :data_nascimento, :contato, :senha)
+      params.require(:aluno).permit(:nome, :endereco, :cep, :cpf, :data_nascimento, :contato, :senha, :academium_id)
     end
 end

@@ -46,6 +46,9 @@
     <%= form.text_field :senha %>
   </div>
 
+  <%= form.select :academium_id, options_for_select(Academium.all.ids) %>
+
+
   <div>
     <%= form.submit %>
   </div>
