@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :proprietarios, :controllers => {:registrations => "registrations"}
 
 end
