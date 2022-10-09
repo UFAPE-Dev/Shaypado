@@ -7,7 +7,7 @@ Projeto para implementação de um Sistema de Academia em Ruby e Rails com foco 
 
 O projeto possuí um cliente, dono de uma academia local (ou de uma rede de academias), que está a procura de um sistema que seja possível, de maneira rápida e prática, gerenciar as suas unidades, a disponibilidade de exercícios que tem nela, seu time de instrutores referentes a cada unidade e as avaliações e treinos de seus alunos. O sistema irá ajudá-lo a organizar as suas unidades, sendo possível gerenciar os instrumentos e instrutores de cada unidade de forma individual. Já para os instrutores, é possível cadastrar os seus alunos, realizar avaliações físicas e o registro de treinos para os alunos. E, para finalizar, os alunos conseguirão acompanhar seus treinos pré-definidos, realizar agentamentos de avaliações e ver a sua evolução com estatísticas.
 
- * [Site no Heroku 💻](https://shaypadoapp.herokuapp.com/)
+ * [Site no Heroku 💻](https://shaypado.herokuapp.com/)
 
 ### ✏️ Pré-Requisitos
 
