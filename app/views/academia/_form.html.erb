@@ -41,7 +41,10 @@
     <%= form.check_box :ativo %>
   </div>
 
-  <%= form.select :proprietario_id, options_for_select(Proprietario.all.ids) %>
+  <div class="col-md-6 form-group">
+    <%= form.label :proprietario_id, "Proprietário", style: "display: block" %>
+    <%= form.select :proprietario_id, @proprietarios, {}, { class: "form-select" } %>
+  </div>
 
   <div>
     <%= form.submit %>

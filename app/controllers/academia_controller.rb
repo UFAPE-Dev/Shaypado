@@ -13,15 +13,18 @@ class AcademiaController < ApplicationController
   # GET /academia/new
   def new
     @academium = Academium.new
+    @proprietarios = Proprietario.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
   end
 
   # GET /academia/1/edit
   def edit
+    @proprietarios = Proprietario.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
   end
 
   # POST /academia or /academia.json
   def create
     @academium = Academium.new(academium_params)
+    @proprietarios = Proprietario.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
 
     respond_to do |format|
       if @academium.save
@@ -36,6 +39,8 @@ class AcademiaController < ApplicationController
 
   # PATCH/PUT /academia/1 or /academia/1.json
   def update
+    @proprietarios = Proprietario.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
+
     respond_to do |format|
       if @academium.update(academium_params)
         format.html { redirect_to academium_url(@academium), notice: "Academium was successfully updated." }
