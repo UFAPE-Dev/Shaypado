@@ -13,6 +13,15 @@ Feature: aluno
     And Eu vejo uma mensagem de que o aluno foi criado com sucesso
     Then Eu vejo o aluno 'Aluno nome' na lista de alunos
 
+  Scenario: Adicionar aluno com data_nascimento invalida
+    Given o proprietario com email 'email@email.com' e senha '12345678' esta logado
+    And a academia com nome 'Academia nome' e cnpj '12345678901234' existe
+    And Eu estou na pagina de alunos
+    When Eu clico em adicionar aluno
+    And Eu preencho os dados do aluno com nome 'Aluno nome' e cpf '12345678901' e senha '12345678' e contato '87984563215' e data de nascimento '01/01/2050' e endereco 'Rua teste' cep '12345678'
+    And Eu clico em salvar aluno
+    Then Eu vejo uma mensagem de que a data de nascimento é invalida
+
   Scenario: Atualizar aluno corretamente
     Given o proprietario com email 'email@email.com' e senha '12345678' esta logado
     And a academia com nome 'Academia nome' e cnpj '12345678901234' existe
