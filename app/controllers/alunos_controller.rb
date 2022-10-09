@@ -13,14 +13,17 @@ class AlunosController < ApplicationController
   # GET /alunos/new
   def new
     @aluno = Aluno.new
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
   end
 
   # GET /alunos/1/edit
   def edit
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
   end
 
   # POST /alunos or /alunos.json
   def create
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
     @aluno = Aluno.new(aluno_params)
 
     respond_to do |format|
@@ -36,6 +39,7 @@ class AlunosController < ApplicationController
 
   # PATCH/PUT /alunos/1 or /alunos/1.json
   def update
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
     respond_to do |format|
       if @aluno.update(aluno_params)
         format.html { redirect_to aluno_url(@aluno), notice: "Aluno was successfully updated." }

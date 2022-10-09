@@ -43,11 +43,11 @@
 
   <div>
     <%= form.label :senha, style: "display: block" %>
-    <%= form.text_field :senha %>
+    <%= form.password_field :senha %>
   </div>
 
-  <%= form.select :academium_id, options_for_select(Academium.all.ids) %>
-
+  <%= form.label :academium_id, "Academia", style: "display: block" %>
+  <%= form.select :academium_id, @academias, {}, { class: "form-select" } %>
 
   <div>
     <%= form.submit %>
