@@ -1,30 +1,3 @@
-Given('eu estou na pagina de cadastro de usuario') do
-  visit '/proprietarios/sign_up'
-  expect(page).to have_content 'Sign up'
-end
-
-And('preencho meu email {string} e senha {string}') do |email, senha|
-  fill_in 'proprietario[nome]', :with => "Usuario Teste"
-  fill_in 'proprietario[endereco]', :with => "Test de endereco"
-  fill_in 'proprietario[cep]', :with => "55385000"
-  fill_in 'proprietario[cpf]', :with => "12345678900"
-  fill_in 'proprietario[data_nascimento]', :with => "09/01/2001"
-  fill_in 'proprietario[contato]', :with => "21547896322"
-  fill_in 'proprietario[email]', :with => email
-  fill_in 'proprietario[password]', :with => senha
-  fill_in 'proprietario[password_confirmation]', :with => senha
-end
-
-And('eu clico no botao Sign Up') do
-  click_button 'Sign up'
-
-  expect(page).to have_content 'Welcome! You have signed up successfully'
-end
-
-And('eu vejo a mensagem {string}') do |message|
-  expect(page).to have_content message
-end
-
 Given('Eu estou na pagina de alunos') do
   visit '/alunos'
   expect(page).to have_content 'Alunos'
@@ -93,4 +66,17 @@ And('Eu preencho os dados do aluno com nome {string} e cpf {string} e senha {str
   fill_in 'aluno[data_nascimento]', :with => data_nascimento
   fill_in 'aluno[contato]', :with => contato
   fill_in 'aluno[senha]', :with => senha
+end
+
+When('Eu visito a pagina de editar aluno') do
+  visit '/alunos/'+ Aluno.last.id.to_s + '/edit'
+  expect(page).to have_content 'Editing aluno'
+end
+
+When('Eu clico em salvar aluno') do
+  click_button 'Update Aluno'
+end
+
+Then('Eu vejo uma mensagem de que o aluno foi atualizado com sucesso') do
+  expect(page).to have_content('Aluno was successfully updated.')
 end
