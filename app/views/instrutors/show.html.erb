@@ -3,8 +3,10 @@
 <%= render @instrutor %>
 
 <div>
-  <%= link_to "Edit this instrutor", edit_instrutor_path(@instrutor) %> |
-  <%= link_to "Back to instrutors", instrutors_path %>
+  <%= link_to "Editar", edit_instrutor_path(@instrutor) %> |
+  <%= link_to "Voltar para todos os instrutores", instrutors_path %>
 
-  <%= button_to "Destroy this instrutor", @instrutor, method: :delete %>
+  <%= link_to "Adicionar novo aluno" "/alunos/new" %>
+
+  <%= button_to "Deletar instrutor", @instrutor, method: :delete %>
 </div>
