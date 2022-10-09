@@ -2,6 +2,8 @@
 
 <h1>Instrutors</h1>
 
+<%= link_to "Voltar para a home", "/" %>
+
 <div id="instrutors">
   <% @instrutors.each do |instrutor| %>
     <%= render instrutor %>
@@ -11,4 +13,6 @@
   <% end %>
 </div>
 
-<%= link_to "New instrutor", new_instrutor_path %>
+<br>
+
+<%= link_to "Novo instrutor", new_instrutor_path %>

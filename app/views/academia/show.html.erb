@@ -3,8 +3,8 @@
 <%= render @academium %>
 
 <div>
-  <%= link_to "Edit this academium", edit_academium_path(@academium) %> |
-  <%= link_to "Back to academia", academia_path %>
+  <%= link_to "Editar", edit_academium_path(@academium) %> |
+  <%= link_to "Voltar para todas as academias", academia_path %>
 
-  <%= button_to "Destroy this academium", @academium, method: :delete %>
+  <%= button_to "Deletar", @academium, method: :delete %>
 </div>

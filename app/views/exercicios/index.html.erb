@@ -2,6 +2,8 @@
 
 <h1>Exercicios</h1>
 
+<%= link_to "Voltar para a home", "/" %>
+
 <div id="exercicios">
   <% @exercicios.each do |exercicio| %>
     <%= render exercicio %>
@@ -11,4 +13,6 @@
   <% end %>
 </div>
 
-<%= link_to "New exercicio", new_exercicio_path %>
+<br>
+
+<%= link_to "Novo exercicio", new_exercicio_path %>
