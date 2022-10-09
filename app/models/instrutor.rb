@@ -1,5 +1,6 @@
 class Instrutor < ApplicationRecord
   belongs_to :academium
+  has_one :endereco, dependent: :destroy
 
   validates :nome, presence: true, length: { maximum: 100, minimum: 10 }, format: { with: /\A[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\z/, message: "Somente letras"}
   validates :cpf, presence: true, length: { is: 11 }, uniqueness: true, format: { with: /\A[0-9]+\z/, message: "Somente números" }
