@@ -81,7 +81,7 @@ group :actions do
   gem 'activerecord-postgresql-adapter'
 end
 
-group :production, :actions do
+group :production do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
 end
