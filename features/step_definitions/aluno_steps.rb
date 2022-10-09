@@ -80,3 +80,17 @@ end
 Then('Eu vejo uma mensagem de que o aluno foi atualizado com sucesso') do
   expect(page).to have_content('Aluno was successfully updated.')
 end
+
+When('Eu visito a pagina de aluno') do
+  visit '/alunos/'+ Aluno.last.id.to_s
+  expect(page).to have_content Aluno.last.nome
+end
+
+When('Eu clico em remover aluno') do
+  click_button 'Destroy this aluno'
+end
+
+Then('Eu vejo uma mensagem de que o aluno foi removido com sucesso') do
+  expect(page).to have_content('Aluno was successfully destroyed.')
+end
+
