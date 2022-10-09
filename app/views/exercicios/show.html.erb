@@ -3,8 +3,8 @@
 <%= render @exercicio %>
 
 <div>
-  <%= link_to "Edit this exercicio", edit_exercicio_path(@exercicio) %> |
-  <%= link_to "Back to exercicios", exercicios_path %>
+  <%= link_to "Editar", edit_exercicio_path(@exercicio) %> |
+  <%= link_to "Voltar para todos os exercícios", exercicios_path %>
 
-  <%= button_to "Destroy this exercicio", @exercicio, method: :delete %>
+  <%= button_to "Deletar", @exercicio, method: :delete %>
 </div>

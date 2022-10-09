@@ -43,7 +43,7 @@
 
   <div class="col-md-6 form-group">
     <%= form.label :academium_id, "Academia", style: "display: block" %>
-    <%= form.select :academium_id, options_for_select(Academium:all.ids) %>
+    <%= form.select :academium_id, options_for_select(Academium.all.ids) %>
   </div>
 
   <div>
