@@ -6,4 +6,5 @@ class Academium < ApplicationRecord
   validates :cnpj, presence: true, length: {is: 14}, format: { with: /\A[0-9]+\z/, message: "Somente números" }
   belongs_to :proprietario
   has_many :alunos
+  has_many :exercicios
 end
