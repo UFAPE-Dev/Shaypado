@@ -13,14 +13,17 @@ class AlunosController < ApplicationController
   # GET /alunos/new
   def new
     @aluno = Aluno.new
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
   end
 
   # GET /alunos/1/edit
   def edit
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
   end
 
   # POST /alunos or /alunos.json
   def create
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
     @aluno = Aluno.new(aluno_params)
 
     respond_to do |format|
