@@ -18,11 +18,11 @@ And('Eu preencho o formulario com os dados do aluno') do
   fill_in 'aluno[senha]', with: '12345678'
 end
 
-And('Eu clico em salvar') do
+And('Eu clico em salvar aluno') do
   click_button 'Create Aluno'
 end
 
-And('Eu vejo uma mensagem de sucesso') do
+And('Eu vejo uma mensagem de sucesso ao criar aluno') do
   expect(page).to have_content('Aluno was successfully created.')
 end
 
@@ -73,7 +73,7 @@ When('Eu visito a pagina de editar aluno') do
   expect(page).to have_content 'Editing aluno'
 end
 
-When('Eu clico em salvar aluno') do
+When('Eu clico em atualizar aluno') do
   click_button 'Update Aluno'
 end
 
@@ -94,3 +94,14 @@ Then('Eu vejo uma mensagem de que o aluno foi removido com sucesso') do
   expect(page).to have_content('Aluno was successfully destroyed.')
 end
 
+Then('Eu vejo uma mensagem de que o aluno foi nao atualizado com sucesso') do
+  expect(page).to have_content('1 error prohibited this aluno from being saved')
+end
+
+And('Eu vejo uma mensagem de que o aluno foi criado com sucesso') do
+  expect(page).to have_content('Aluno was successfully created.')
+end
+
+Then('Eu vejo uma mensagem de que a data de nascimento é invalida') do
+  expect(page).to have_content('Data nascimento must be less than')
+end

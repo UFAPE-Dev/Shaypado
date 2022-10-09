@@ -39,6 +39,7 @@ class AlunosController < ApplicationController
 
   # PATCH/PUT /alunos/1 or /alunos/1.json
   def update
+    @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
     respond_to do |format|
       if @aluno.update(aluno_params)
         format.html { redirect_to aluno_url(@aluno), notice: "Aluno was successfully updated." }
