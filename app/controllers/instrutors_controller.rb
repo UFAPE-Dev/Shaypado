@@ -13,15 +13,18 @@ class InstrutorsController < ApplicationController
   # GET /instrutors/new
   def new
     @instrutor = Instrutor.new
+    @academias = Academium.all.map { |acad| ["#{acad.id} - #{acad.nome}", acad.id] }
   end
 
   # GET /instrutors/1/edit
   def edit
+    @academias = Academium.all.map { |acad| ["#{acad.id} - #{acad.nome}", acad.id] }
   end
 
   # POST /instrutors or /instrutors.json
   def create
     @instrutor = Instrutor.new(instrutor_params)
+    @academias = Academium.all.map { |acad| ["#{acad.id} - #{acad.nome}", acad.id] }
 
     respond_to do |format|
       if @instrutor.save
@@ -36,6 +39,8 @@ class InstrutorsController < ApplicationController
 
   # PATCH/PUT /instrutors/1 or /instrutors/1.json
   def update
+    @academias = Academium.all.map { |acad| ["#{acad.id} - #{acad.nome}", acad.id] }
+
     respond_to do |format|
       if @instrutor.update(instrutor_params)
         format.html { redirect_to instrutor_url(@instrutor), notice: "Instrutor was successfully updated." }
