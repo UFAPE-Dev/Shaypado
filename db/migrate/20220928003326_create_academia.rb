@@ -3,7 +3,6 @@ class CreateAcademia < ActiveRecord::Migration[7.0]
     create_table :academia do |t|
       t.string :nome
       t.string :email
-      t.string :endereco
       t.string :cnpj
       t.string :contato
       t.boolean :ativo
