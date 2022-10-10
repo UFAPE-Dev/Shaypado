@@ -14,6 +14,7 @@ class InstrutorsController < ApplicationController
   def new
     @instrutor = Instrutor.new
     @academias = Academium.all.map { |acad| ["#{acad.id} - #{acad.nome}", acad.id] }
+    @instrutor.build_endereco
   end
 
   # GET /instrutors/1/edit
@@ -25,6 +26,7 @@ class InstrutorsController < ApplicationController
   def create
     @instrutor = Instrutor.new(instrutor_params)
     @academias = Academium.all.map { |acad| ["#{acad.id} - #{acad.nome}", acad.id] }
+    @instrutor.endereco = Endereco.new(instrutor_params[:endereco_attributes])
 
     respond_to do |format|
       if @instrutor.save
@@ -70,6 +72,7 @@ class InstrutorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def instrutor_params
-      params.require(:instrutor).permit(:nome, :endereco, :cep, :cpf, :data_nascimento, :contato, :academium_id, :horario_trabalho, :email, :password)
+      params.require(:instrutor).permit(:nome, :cpf, :data_nascimento, :contato, :academium_id, :horario_trabalho, :email, :password,
+                                        endereco_attributes: [:logradouro, :cep])
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_09_164705) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
   create_table "academia", force: :cascade do |t|
     t.string "nome"
     t.string "email"
@@ -38,6 +38,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_164705) do
     t.index ["academium_id"], name: "index_alunos_on_academium_id"
   end
 
+  create_table "enderecos", force: :cascade do |t|
+    t.string "logradouro"
+    t.string "cep"
+    t.integer "instrutor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrutor_id"], name: "index_enderecos_on_instrutor_id"
+  end
+
   create_table "exercicios", force: :cascade do |t|
     t.string "titulo"
     t.string "dificuldade"
@@ -53,8 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_164705) do
 
   create_table "instrutors", force: :cascade do |t|
     t.string "nome"
-    t.string "endereco"
-    t.string "cep"
     t.string "cpf"
     t.date "data_nascimento"
     t.string "contato"
@@ -87,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_164705) do
 
   add_foreign_key "academia", "proprietarios"
   add_foreign_key "alunos", "academia"
+  add_foreign_key "enderecos", "instrutors"
   add_foreign_key "exercicios", "academia"
   add_foreign_key "instrutors", "academia"
 end

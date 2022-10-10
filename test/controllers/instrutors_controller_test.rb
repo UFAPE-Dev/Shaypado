@@ -17,7 +17,7 @@ class InstrutorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create instrutor" do
     assert_difference("Instrutor.count") do
-      post instrutors_url, params: { instrutor: { academium_id: @instrutor.academium_id, cep: @instrutor.cep, contato: @instrutor.contato, cpf: @instrutor.cpf, data_nascimento: @instrutor.data_nascimento, email: @instrutor.email, endereco: @instrutor.endereco, horario_trabalho: @instrutor.horario_trabalho, nome: @instrutor.nome, password: @instrutor.password } }
+      post instrutors_url, params: { instrutor: { academium_id: @instrutor.academium_id, contato: @instrutor.contato, cpf: @instrutor.cpf, data_nascimento: @instrutor.data_nascimento, email: @instrutor.email, horario_trabalho: @instrutor.horario_trabalho, nome: @instrutor.nome, password: @instrutor.password } }
     end
 
     assert_redirected_to instrutor_url(Instrutor.last)
@@ -34,7 +34,7 @@ class InstrutorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update instrutor" do
-    patch instrutor_url(@instrutor), params: { instrutor: { academium_id: @instrutor.academium_id, cep: @instrutor.cep, contato: @instrutor.contato, cpf: @instrutor.cpf, data_nascimento: @instrutor.data_nascimento, email: @instrutor.email, endereco: @instrutor.endereco, horario_trabalho: @instrutor.horario_trabalho, nome: @instrutor.nome, password: @instrutor.password } }
+    patch instrutor_url(@instrutor), params: { instrutor: { academium_id: @instrutor.academium_id, contato: @instrutor.contato, cpf: @instrutor.cpf, data_nascimento: @instrutor.data_nascimento, email: @instrutor.email, horario_trabalho: @instrutor.horario_trabalho, nome: @instrutor.nome, password: @instrutor.password } }
     assert_redirected_to instrutor_url(@instrutor)
   end
 
