@@ -15,12 +15,10 @@ class InstrutorsTest < ApplicationSystemTestCase
     click_on "New instrutor"
 
     fill_in "Academium", with: @instrutor.academium_id
-    fill_in "Cep", with: @instrutor.cep
     fill_in "Contato", with: @instrutor.contato
     fill_in "Cpf", with: @instrutor.cpf
     fill_in "Data nascimento", with: @instrutor.data_nascimento
     fill_in "Email", with: @instrutor.email
-    fill_in "Endereco", with: @instrutor.endereco
     fill_in "Horario trabalho", with: @instrutor.horario_trabalho
     fill_in "Nome", with: @instrutor.nome
     fill_in "Password", with: @instrutor.password
@@ -35,12 +33,10 @@ class InstrutorsTest < ApplicationSystemTestCase
     click_on "Edit this instrutor", match: :first
 
     fill_in "Academium", with: @instrutor.academium_id
-    fill_in "Cep", with: @instrutor.cep
     fill_in "Contato", with: @instrutor.contato
     fill_in "Cpf", with: @instrutor.cpf
     fill_in "Data nascimento", with: @instrutor.data_nascimento
     fill_in "Email", with: @instrutor.email
-    fill_in "Endereco", with: @instrutor.endereco
     fill_in "Horario trabalho", with: @instrutor.horario_trabalho
     fill_in "Nome", with: @instrutor.nome
     fill_in "Password", with: @instrutor.password
