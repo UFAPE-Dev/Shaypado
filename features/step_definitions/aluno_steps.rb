@@ -4,7 +4,7 @@ Given('Eu estou na pagina de alunos') do
 end
 
 When('Eu clico em adicionar aluno') do
-  click_link 'New aluno'
+  click_link 'Novo aluno'
   expect(page).to have_content 'New aluno'
 end
 
@@ -87,7 +87,7 @@ When('Eu visito a pagina de aluno') do
 end
 
 When('Eu clico em remover aluno') do
-  click_button 'Destroy this aluno'
+  click_button 'Deletar'
 end
 
 Then('Eu vejo uma mensagem de que o aluno foi removido com sucesso') do

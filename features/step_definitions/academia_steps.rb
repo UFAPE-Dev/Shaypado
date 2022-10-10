@@ -110,7 +110,7 @@ Given('estou na pagina de visualizacao dessa academia com cnpj {string}') do |cn
 end
 
 When('eu clico no botao Remover Academia') do
-  click_button 'Destroy this academium'
+  click_button 'Deletar'
 end
 
 Then('eu vejo uma mensagem de sucesso dizendo que a academia foi removida') do
