@@ -6,6 +6,7 @@ class CreateEnderecos < ActiveRecord::Migration[7.0]
 
       t.references :instrutor, foreign_key: true, null: true
       t.references :aluno, foreign_key: true, null: true
+      t.references :academia, foreign_key: true, null: true
 
       t.timestamps
     end
