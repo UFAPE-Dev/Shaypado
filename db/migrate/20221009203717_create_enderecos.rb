@@ -5,6 +5,7 @@ class CreateEnderecos < ActiveRecord::Migration[7.0]
       t.string :cep
 
       t.references :instrutor, foreign_key: true
+      t.references :aluno, foreign_key: true
 
       t.timestamps
     end
