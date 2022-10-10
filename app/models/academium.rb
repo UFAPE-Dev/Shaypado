@@ -7,4 +7,6 @@ class Academium < ApplicationRecord
   belongs_to :proprietario
   has_many :alunos
   has_many :exercicios
+  has_one :endereco, dependent: :destroy
+  accepts_nested_attributes_for :endereco, allow_destroy: true
 end
