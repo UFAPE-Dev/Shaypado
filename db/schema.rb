@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
 
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
+    t.string "endereco"
+    t.string "cep"
     t.string "cpf"
     t.date "data_nascimento"
     t.string "contato"
@@ -62,6 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
 
   create_table "instrutors", force: :cascade do |t|
     t.string "nome"
+    t.string "endereco"
+    t.string "cep"
     t.string "cpf"
     t.date "data_nascimento"
     t.string "contato"
