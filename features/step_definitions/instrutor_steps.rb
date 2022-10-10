@@ -9,8 +9,8 @@ When('eu preencho o campo nome {string}, email {string}, senha {string}, enderec
   fill_in 'instrutor[nome]', :with => nome
   fill_in 'instrutor[email]', :with => email
   fill_in 'instrutor[password]', :with => senha
-  fill_in 'instrutor[endereco]', :with => endereco
-  fill_in 'instrutor[cep]', :with => cep
+  fill_in 'instrutor[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'instrutor[endereco_attributes][cep]', :with => cep
   fill_in 'instrutor[cpf]', :with => cpf
   fill_in 'instrutor[data_nascimento]', :with => data
   fill_in 'instrutor[contato]', :with => contato
@@ -34,8 +34,8 @@ Given('existe o instrutor que possui nome {string}, email {string}, senha {strin
   fill_in 'instrutor[nome]', :with => nome
   fill_in 'instrutor[email]', :with => email
   fill_in 'instrutor[password]', :with => senha
-  fill_in 'instrutor[endereco]', :with => endereco
-  fill_in 'instrutor[cep]', :with => cep
+  fill_in 'instrutor[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'instrutor[endereco_attributes][cep]', :with => cep
   fill_in 'instrutor[cpf]', :with => cpf
   fill_in 'instrutor[data_nascimento]', :with => data
   fill_in 'instrutor[contato]', :with => contato
@@ -79,8 +79,8 @@ When('eu edito os campos com os novos valores nome {string}, email {string}, sen
   fill_in 'instrutor[nome]', :with => nome
   fill_in 'instrutor[email]', :with => email
   fill_in 'instrutor[password]', :with => senha
-  fill_in 'instrutor[endereco]', :with => endereco
-  fill_in 'instrutor[cep]', :with => cep
+  fill_in 'instrutor[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'instrutor[endereco_attributes][cep]', :with => cep
   fill_in 'instrutor[cpf]', :with => cpf
   fill_in 'instrutor[data_nascimento]', :with => data
   fill_in 'instrutor[contato]', :with => contato
@@ -101,7 +101,7 @@ Given('estou na pagina de visualizacao desse instrutor com cpf {string}') do |cp
 end
 
 When('eu clico no botao Remover Instrutor') do
-  click_button 'Destroy this instrutor'
+  click_button 'Deletar instrutor'
 end
 
 Then('eu vejo uma mensagem de sucesso dizendo que o instrutor foi removido') do
