@@ -17,7 +17,7 @@ class AlunosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create aluno" do
     assert_difference("Aluno.count") do
-      post alunos_url, params: { aluno: { cep: @aluno.cep, contato: @aluno.contato, cpf: @aluno.cpf, data_nascimento: @aluno.data_nascimento, endereco: @aluno.endereco, nome: @aluno.nome, senha: @aluno.senha } }
+      post alunos_url, params: { aluno: { contato: @aluno.contato, cpf: @aluno.cpf, data_nascimento: @aluno.data_nascimento, nome: @aluno.nome, senha: @aluno.senha } }
     end
 
     assert_redirected_to aluno_url(Aluno.last)

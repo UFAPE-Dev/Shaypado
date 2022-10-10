@@ -14,6 +14,7 @@ class AlunosController < ApplicationController
   def new
     @aluno = Aluno.new
     @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
+    @aluno.build_endereco
   end
 
   # GET /alunos/1/edit
@@ -25,6 +26,7 @@ class AlunosController < ApplicationController
   def create
     @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
     @aluno = Aluno.new(aluno_params)
+    @aluno.endereco = Endereco.new(aluno_params[:endereco_attributes])
 
     respond_to do |format|
       if @aluno.save
@@ -69,6 +71,7 @@ class AlunosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aluno_params
-      params.require(:aluno).permit(:nome, :endereco, :cep, :cpf, :data_nascimento, :contato, :senha, :academium_id)
+      params.require(:aluno).permit(:nome, :cpf, :data_nascimento, :contato, :senha, :academium_id,
+                                    endereco_attributes: [:logradouro, :cep])
     end
 end

@@ -10,8 +10,8 @@ end
 
 And('Eu preencho o formulario com os dados do aluno') do
   fill_in 'aluno[nome]', with: 'Nome do Aluno'
-  fill_in 'aluno[endereco]', with: 'Endereço do Aluno'
-  fill_in 'aluno[cep]', with: '55385000'
+  fill_in 'aluno[endereco_attributes][logradouro]', with: 'Rua do Aluno'
+  fill_in 'aluno[endereco_attributes][cep]', with: '12345678'
   fill_in 'aluno[cpf]', with: '12345678522'
   fill_in 'aluno[data_nascimento]', with: '09-06-2001'
   fill_in 'aluno[contato]', with: '87981067233'
@@ -60,8 +60,8 @@ end
 
 And('Eu preencho os dados do aluno com nome {string} e cpf {string} e senha {string} e contato {string} e data de nascimento {string} e endereco {string} cep {string}') do |nome, cpf, senha, contato, data_nascimento, endereco, cep|
   fill_in 'aluno[nome]', :with => nome
-  fill_in 'aluno[endereco]', :with => endereco
-  fill_in 'aluno[cep]', :with => cep
+  fill_in 'aluno[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'aluno[endereco_attributes][cep]', :with => cep
   fill_in 'aluno[cpf]', :with => cpf
   fill_in 'aluno[data_nascimento]', :with => data_nascimento
   fill_in 'aluno[contato]', :with => contato

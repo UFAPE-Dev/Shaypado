@@ -1,7 +1,8 @@
 class Endereco < ApplicationRecord
 
   # Relacionamentos
-  belongs_to :instrutor
+  has_many :alunos
+  has_many :instrutors
 
   # Validacoes
   validates :logradouro, presence: true, length: { in: 4..100 }
