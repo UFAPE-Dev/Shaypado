@@ -101,7 +101,7 @@ Given('estou na pagina de visualizacao desse instrutor com cpf {string}') do |cp
 end
 
 When('eu clico no botao Remover Instrutor') do
-  click_button 'Destroy this instrutor'
+  click_button 'Deletar'
 end
 
 Then('eu vejo uma mensagem de sucesso dizendo que o instrutor foi removido') do
