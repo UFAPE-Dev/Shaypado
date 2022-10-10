@@ -50,7 +50,7 @@ jobs:
            PG_USER: postgres
            PG_PASSWORD: password
            RAILS_ENV: actions
-           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+           RAILS_MASTER_KEY: 80076c56cbbfd9fe927c461585eb12ed
            WITH_COVERAGE: true
            DISABLE_SPRING: 1
          run: |
