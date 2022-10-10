@@ -21,12 +21,13 @@ Given('eu estou na pagina de cadastro de academia') do
   expect(page).to have_content 'New academium'
 end
 
-When('eu preencho os dados para o proprietario com cpf {string} os campos nome {string}, email {string}, endereco {string}, cnpj {string} e contato {string}') do |cpf, nome, email, endereco, cnpj, contato|
+When('eu preencho os dados para o proprietario com cpf {string} os campos nome {string}, email {string}, endereco {string}, cep {string}, cnpj {string} e contato {string}') do |cpf, nome, email, endereco, cep, cnpj, contato|
   id = Proprietario.where(cpf: cpf).first.id
 
   fill_in 'academium[nome]', :with => nome
   fill_in 'academium[email]', :with => email
-  fill_in 'academium[endereco]', :with => endereco
+  fill_in 'academium[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'academium[endereco_attributes][cep]', :with => cep
   fill_in 'academium[cnpj]', :with => cnpj
   fill_in 'academium[contato]', :with => contato
   find("#academium_proprietario_id option[value='#{id}']").select_option
@@ -40,7 +41,7 @@ Then('eu vejo uma mensagem de sucesso dizendo que a academia foi criada') do
   expect(page).to have_content 'Academium was successfully created.'
 end
 
-Given('esse proprietario de cpf {string} tem academia que possui nome {string}, email {string}, endereco {string}, cnpj {string} e contato {string}') do |cpf, nome, email, endereco, cnpj, contato|
+Given('esse proprietario de cpf {string} tem academia que possui nome {string}, email {string}, endereco {string}, cep {string}, cnpj {string} e contato {string}') do |cpf, nome, email, endereco, cep, cnpj, contato|
   visit '/academia/new'
   expect(page).to have_content 'New academium'
 
@@ -49,7 +50,8 @@ Given('esse proprietario de cpf {string} tem academia que possui nome {string}, 
   find("#academium_proprietario_id option[value='#{id}']").select_option
   fill_in 'academium[nome]', :with => nome
   fill_in 'academium[email]', :with => email
-  fill_in 'academium[endereco]', :with => endereco
+  fill_in 'academium[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'academium[endereco_attributes][cep]', :with => cep
   fill_in 'academium[cnpj]', :with => cnpj
   fill_in 'academium[contato]', :with => contato
 
@@ -86,10 +88,11 @@ Given('estou na pagina de edicao dessa academia com cnpj {string}') do |cnpj|
   expect(page).to have_content 'Editing academium'
 end
 
-When('eu edito os campos com os novos valores nome {string}, email {string}, endereco {string}, cnpj {string} e contato {string}') do |nome, email, endereco, cnpj, contato|
+When('eu edito os campos com os novos valores nome {string}, email {string}, endereco {string}, cep {string}, cnpj {string} e contato {string}') do |nome, email, endereco, cep, cnpj, contato|
   fill_in 'academium[nome]', :with => nome
   fill_in 'academium[email]', :with => email
-  fill_in 'academium[endereco]', :with => endereco
+  fill_in 'academium[endereco_attributes][logradouro]', :with => endereco
+  fill_in 'academium[endereco_attributes][cep]', :with => cep
   fill_in 'academium[cnpj]', :with => cnpj
   fill_in 'academium[contato]', :with => contato
 end
