@@ -21,10 +21,18 @@
     <%= form.text_field :email %>
   </div>
 
-  <div>
-    <%= form.label :endereco, style: "display: block" %>
-    <%= form.text_field :endereco %>
-  </div>
+  <%= form.fields_for :endereco do |endereco_form| %>
+    <div>
+      <%= endereco_form.label :logradouro, display: "block" %>
+      <%= endereco_form.text_field :logradouro %>
+    </div>
+
+    <div>
+      <%= endereco_form.label :cep, display: "block" %>
+      <%= endereco_form.text_field :cep %>
+    </div>
+
+  <%end %>
 
   <div>
     <%= form.label :cnpj, style: "display: block" %>
