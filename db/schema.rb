@@ -14,7 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
   create_table "academia", force: :cascade do |t|
     t.string "nome"
     t.string "email"
-    t.string "endereco"
     t.string "cnpj"
     t.string "contato"
     t.boolean "ativo"
@@ -43,8 +42,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
     t.string "cep"
     t.integer "instrutor_id"
     t.integer "aluno_id"
+    t.integer "academium_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["academium_id"], name: "index_enderecos_on_academium_id"
     t.index ["aluno_id"], name: "index_enderecos_on_aluno_id"
     t.index ["instrutor_id"], name: "index_enderecos_on_instrutor_id"
   end
@@ -98,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
 
   add_foreign_key "academia", "proprietarios"
   add_foreign_key "alunos", "academia"
+  add_foreign_key "enderecos", "academia"
   add_foreign_key "enderecos", "alunos"
   add_foreign_key "enderecos", "instrutors"
   add_foreign_key "exercicios", "academia"
