@@ -36,7 +36,8 @@ And('a academia com nome {string} e cnpj {string} existe') do |nome, cnpj|
   fill_in 'academium[cnpj]', with: cnpj
   fill_in 'academium[contato]', with: '87981067233'
   fill_in 'academium[email]', with: 'email@email.com'
-  fill_in 'academium[endereco]', with: 'Endereço da academia'
+  fill_in 'academium[endereco_attributes][logradouro]', with: 'Rua do Aluno'
+  fill_in 'academium[endereco_attributes][cep]', with: '12345678'
 
   click_button 'Create Academium'
   expect(page).to have_content(nome)
