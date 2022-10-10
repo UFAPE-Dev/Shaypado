@@ -26,7 +26,7 @@ class AlunosController < ApplicationController
   def create
     @academias = Academium.all.map { |prop| ["#{prop.id} - #{prop.nome}", prop.id] }
     @aluno = Aluno.new(aluno_params)
-    @aluno.endereco = Endereco.new(endereco_params)
+    @aluno.endereco = Endereco.new(aluno_params[:endereco_attributes])
 
     respond_to do |format|
       if @aluno.save
