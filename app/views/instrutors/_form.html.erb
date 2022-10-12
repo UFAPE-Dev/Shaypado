@@ -22,13 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :data_nascimento, style: "display: block" %>
-    <%= form.date_field :data_nascimento %>
+    <%= form.label :data_de_nascimento, style: "display: block" %>
+    <%= form.date_field :data_de_nascimento %>
   </div>
 
   <div>
-    <%= form.label :contato, style: "display: block" %>
-    <%= form.text_field :contato %>
+    <%= form.label :contato_telefone, style: "display: block" %>
+    <%= form.text_field :contato_telefone %>
   </div>
 
   <%= form.fields_for :endereco do |endereco_form| %>
@@ -50,8 +50,8 @@
   </div>
 
   <div>
-    <%= form.label :horario_trabalho, style: "display: block" %>
-    <%= form.time_field :horario_trabalho %>
+    <%= form.label :horas_de_trabalho, style: "display: block" %>
+    <%= form.time_field :horas_de_trabalho %>
   </div>
 
   <div>
