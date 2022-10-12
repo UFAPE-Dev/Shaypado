@@ -34,8 +34,8 @@ And('a academia com nome {string} e cnpj {string} existe') do |nome, cnpj|
   visit '/academia/new'
   fill_in 'academium[nome]', with: nome
   fill_in 'academium[cnpj]', with: cnpj
-  fill_in 'academium[contato]', with: '87981067233'
-  fill_in 'academium[email]', with: 'email@email.com'
+  fill_in 'academium[contato_comercial]', with: '87981067233'
+  fill_in 'academium[email_comercial]', with: 'email@email.com'
   fill_in 'academium[endereco_attributes][logradouro]', with: 'Rua do Aluno'
   fill_in 'academium[endereco_attributes][cep]', with: '12345678'
 
