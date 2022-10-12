@@ -13,9 +13,9 @@
 ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
   create_table "academia", force: :cascade do |t|
     t.string "nome"
-    t.string "email"
+    t.string "email_comercial"
     t.string "cnpj"
-    t.string "contato"
+    t.string "contato_comercial"
     t.boolean "ativo"
     t.integer "proprietario_id", null: false
     t.datetime "created_at", null: false
