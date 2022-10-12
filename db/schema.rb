@@ -25,8 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
 
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
-    t.string "endereco"
-    t.string "cep"
     t.string "cpf"
     t.date "data_nascimento"
     t.string "contato"
@@ -65,13 +63,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_203717) do
 
   create_table "instrutors", force: :cascade do |t|
     t.string "nome"
-    t.string "endereco"
-    t.string "cep"
     t.string "cpf"
-    t.date "data_nascimento"
-    t.string "contato"
+    t.date "data_de_nascimento"
+    t.string "contato_telefone"
     t.integer "academium_id", null: false
-    t.time "horario_trabalho"
+    t.time "horas_de_trabalho"
     t.string "email"
     t.string "password"
     t.datetime "created_at", null: false

@@ -3,10 +3,10 @@ class CreateInstrutors < ActiveRecord::Migration[7.0]
     create_table :instrutors do |t|
       t.string :nome
       t.string :cpf
-      t.date :data_nascimento
-      t.string :contato
+      t.date :data_de_nascimento
+      t.string :contato_telefone
       t.references :academium, null: false, foreign_key: true
-      t.time :horario_trabalho
+      t.time :horas_de_trabalho
       t.string :email
       t.string :password
 
