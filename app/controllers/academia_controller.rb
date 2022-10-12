@@ -72,7 +72,7 @@ class AcademiaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def academium_params
-      params.require(:academium).permit(:nome, :email, :cnpj, :contato, :ativo, :proprietario_id,
+      params.require(:academium).permit(:nome, :email_comercial, :cnpj, :contato_comercial, :ativo, :proprietario_id,
                                         endereco_attributes: [:logradouro, :cep])
     end
 end

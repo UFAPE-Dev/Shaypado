@@ -25,11 +25,11 @@ When('eu preencho os dados para o proprietario com cpf {string} os campos nome {
   id = Proprietario.where(cpf: cpf).first.id
 
   fill_in 'academium[nome]', :with => nome
-  fill_in 'academium[email]', :with => email
+  fill_in 'academium[email_comercial]', :with => email
   fill_in 'academium[endereco_attributes][logradouro]', :with => endereco
   fill_in 'academium[endereco_attributes][cep]', :with => cep
   fill_in 'academium[cnpj]', :with => cnpj
-  fill_in 'academium[contato]', :with => contato
+  fill_in 'academium[contato_comercial]', :with => contato
   find("#academium_proprietario_id option[value='#{id}']").select_option
 end
 
@@ -49,11 +49,11 @@ Given('esse proprietario de cpf {string} tem academia que possui nome {string}, 
 
   find("#academium_proprietario_id option[value='#{id}']").select_option
   fill_in 'academium[nome]', :with => nome
-  fill_in 'academium[email]', :with => email
+  fill_in 'academium[email_comercial]', :with => email
   fill_in 'academium[endereco_attributes][logradouro]', :with => endereco
   fill_in 'academium[endereco_attributes][cep]', :with => cep
   fill_in 'academium[cnpj]', :with => cnpj
-  fill_in 'academium[contato]', :with => contato
+  fill_in 'academium[contato_comercial]', :with => contato
 
   click_button 'Create Academium'
   expect(page).to have_content 'Academium was successfully created.'
@@ -90,11 +90,11 @@ end
 
 When('eu edito os campos com os novos valores nome {string}, email {string}, endereco {string}, cep {string}, cnpj {string} e contato {string}') do |nome, email, endereco, cep, cnpj, contato|
   fill_in 'academium[nome]', :with => nome
-  fill_in 'academium[email]', :with => email
+  fill_in 'academium[email_comercial]', :with => email
   fill_in 'academium[endereco_attributes][logradouro]', :with => endereco
   fill_in 'academium[endereco_attributes][cep]', :with => cep
   fill_in 'academium[cnpj]', :with => cnpj
-  fill_in 'academium[contato]', :with => contato
+  fill_in 'academium[contato_comercial]', :with => contato
 end
 
 When('eu clico no botao Editar Academia') do
