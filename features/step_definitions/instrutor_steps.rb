@@ -12,9 +12,9 @@ When('eu preencho o campo nome {string}, email {string}, senha {string}, enderec
   fill_in 'instrutor[endereco_attributes][logradouro]', :with => endereco
   fill_in 'instrutor[endereco_attributes][cep]', :with => cep
   fill_in 'instrutor[cpf]', :with => cpf
-  fill_in 'instrutor[data_nascimento]', :with => data
-  fill_in 'instrutor[contato]', :with => contato
-  fill_in 'instrutor[horario_trabalho]', :with => horario
+  fill_in 'instrutor[data_de_nascimento]', :with => data
+  fill_in 'instrutor[contato_telefone]', :with => contato
+  fill_in 'instrutor[horas_de_trabalho]', :with => horario
   find("#instrutor_academium_id option[value='#{academia}']").select_option
 end
 
@@ -37,9 +37,9 @@ Given('existe o instrutor que possui nome {string}, email {string}, senha {strin
   fill_in 'instrutor[endereco_attributes][logradouro]', :with => endereco
   fill_in 'instrutor[endereco_attributes][cep]', :with => cep
   fill_in 'instrutor[cpf]', :with => cpf
-  fill_in 'instrutor[data_nascimento]', :with => data
-  fill_in 'instrutor[contato]', :with => contato
-  fill_in 'instrutor[horario_trabalho]', :with => horario
+  fill_in 'instrutor[data_de_nascimento]', :with => data
+  fill_in 'instrutor[contato_telefone]', :with => contato
+  fill_in 'instrutor[horas_de_trabalho]', :with => horario
   find("#instrutor_academium_id option[value='#{academia}']").select_option
 
   click_button 'Create Instrutor'
@@ -82,9 +82,9 @@ When('eu edito os campos com os novos valores nome {string}, email {string}, sen
   fill_in 'instrutor[endereco_attributes][logradouro]', :with => endereco
   fill_in 'instrutor[endereco_attributes][cep]', :with => cep
   fill_in 'instrutor[cpf]', :with => cpf
-  fill_in 'instrutor[data_nascimento]', :with => data
-  fill_in 'instrutor[contato]', :with => contato
-  fill_in 'instrutor[horario_trabalho]', :with => horario
+  fill_in 'instrutor[data_de_nascimento]', :with => data
+  fill_in 'instrutor[contato_telefone]', :with => contato
+  fill_in 'instrutor[horas_de_trabalho]', :with => horario
 end
 
 When('eu clico no botao Editar Instrutor') do

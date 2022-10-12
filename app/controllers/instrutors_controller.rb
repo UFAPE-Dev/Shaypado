@@ -72,7 +72,7 @@ class InstrutorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def instrutor_params
-      params.require(:instrutor).permit(:nome, :cpf, :data_nascimento, :contato, :academium_id, :horario_trabalho, :email, :password,
+      params.require(:instrutor).permit(:nome, :cpf, :data_de_nascimento, :contato_telefone, :academium_id, :horas_de_trabalho, :email, :password,
                                         endereco_attributes: [:logradouro, :cep])
     end
 end
